@@ -1,10 +1,28 @@
-/*
-Copyright © 2023 NAME HERE <EMAIL ADDRESS>
-*/
 package main
 
-import "github.com/milind-zendesk/toy-robot-go/cmd"
+import (
+	"fmt"
+)
 
 func main() {
-	cmd.Execute()
+	for {
+		var command string = ""
+		_, err := fmt.Scanln(&command)
+		if err != nil {
+			panic(err)
+		}
+		switch command {
+		case "move":
+			fmt.Printf("Move")
+		case "left":
+			fmt.Printf("Left")
+		case "right":
+			fmt.Printf("Right")
+		case "report":
+			fmt.Printf("Left")
+		case "exit":
+			break
+		}
+	}
+	fmt.Printf("Done")
 }
