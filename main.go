@@ -12,8 +12,8 @@ func main() {
 	max_width := 4
 	max_height := 4
 	directions := [4]string{"west", "south", "east", "north"}
-	var robot_x int
-	var robot_y int
+	var robot_x int = 0
+	var robot_y int = 0
 	marker_face := "north"
 	fmt.Println("Place your marker on 5x5 metrics")
 	fmt.Println("Accepted input : PLACE <x_coordinate>,<y_coordinate>,<direction>")
