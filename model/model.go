@@ -17,3 +17,12 @@ type Table struct {
 }
 
 var Directions = []string{"east", "south", "west", "north"}
+
+func IndexOf(element string) int {
+	for k, v := range Directions {
+		if element == v {
+			return k
+		}
+	}
+	return -1 //not found.
+}

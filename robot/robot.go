@@ -5,25 +5,25 @@ import (
 	"toy-robot-go/model"
 )
 
+var directions = model.Directions
+
 func Left(robot *model.Robot) {
-	directions := model.Directions
 	fmt.Println("Previous Direction ", robot.Facing)
 	if robot.Facing == directions[0] {
 		robot.Facing = directions[len(directions)-1]
 	} else {
-		index := indexOf(robot.Facing, directions[:])
+		index := model.IndexOf(robot.Facing)
 		robot.Facing = directions[index-1]
 	}
 	fmt.Println("Updated Direction ", robot.Facing)
 }
 
 func Right(robot *model.Robot) {
-	directions := model.Directions
 	fmt.Println("Previous Direction ", robot.Facing)
 	if robot.Facing == directions[len(directions)-1] {
 		robot.Facing = directions[0]
 	} else {
-		index := indexOf(robot.Facing, directions[:])
+		index := model.IndexOf(robot.Facing)
 		robot.Facing = directions[index+1]
 	}
 	fmt.Println("Updated Direction ", robot.Facing)
@@ -73,13 +73,4 @@ func Move(table *model.Table) {
 func Report(robot *model.Robot) {
 	positions := robot.Position
 	fmt.Println("Current Position of Robot: ", positions.X_Coords, ", ", positions.Y_Coords, ", ", robot.Facing)
-}
-
-func indexOf(element string, data []string) int {
-	for k, v := range data {
-		if element == v {
-			return k
-		}
-	}
-	return -1 //not found.
 }
