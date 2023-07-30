@@ -35,35 +35,35 @@ func Move(table *model.Table) {
 	switch robot.Facing {
 	case "north":
 		if positions.Y_Coords == table.MaxY {
-			fmt.Println("Robot will go out of the board \n")
+			fmt.Println("Robot will go out of the board")
 		} else {
 			fmt.Println("Previous Positions : ", positions.X_Coords, ",", positions.Y_Coords)
 			positions.Y_Coords += 1
-			fmt.Println("Updated Positions : ", positions.X_Coords, ",", positions.Y_Coords, "\n")
+			fmt.Println("Updated Positions : ", positions.X_Coords, ",", positions.Y_Coords)
 		}
 	case "east":
 		if positions.X_Coords == table.MaxX {
-			fmt.Println("Robot will go out of the board \n")
+			fmt.Println("Robot will go out of the board")
 		} else {
 			fmt.Println("Previous Positions : ", positions.X_Coords, ",", positions.Y_Coords)
 			positions.X_Coords += 1
-			fmt.Println("Updated Positions : ", positions.X_Coords, ",", positions.Y_Coords, "\n")
+			fmt.Println("Updated Positions : ", positions.X_Coords, ",", positions.Y_Coords)
 		}
 	case "south":
 		if positions.Y_Coords == 0 {
-			fmt.Println("Robot will go out of the board \n")
+			fmt.Println("Robot will go out of the board")
 		} else {
 			fmt.Println("Previous Positions : ", positions.X_Coords, ",", positions.Y_Coords)
 			positions.Y_Coords -= 1
-			fmt.Println("Updated Positions : ", positions.X_Coords, ",", positions.Y_Coords, "\n")
+			fmt.Println("Updated Positions : ", positions.X_Coords, ",", positions.Y_Coords)
 		}
 	case "west":
 		if positions.X_Coords == 0 {
-			fmt.Println("Robot will go out of the board \n")
+			fmt.Println("Robot will go out of the board")
 		} else {
 			fmt.Println("Previous Positions : ", positions.X_Coords, ",", positions.Y_Coords)
 			positions.X_Coords -= 1
-			fmt.Println("Updated Positions : ", positions.X_Coords, ",", positions.Y_Coords, "\n")
+			fmt.Println("Updated Positions : ", positions.X_Coords, ",", positions.Y_Coords)
 		}
 	}
 	robot.Position = positions
